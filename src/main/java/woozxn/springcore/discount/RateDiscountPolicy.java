@@ -1,8 +1,10 @@
 package woozxn.springcore.discount;
 
+import org.springframework.stereotype.Component;
 import woozxn.springcore.member.Grade;
 import woozxn.springcore.member.Member;
 
+@Component
 public class RateDiscountPolicy implements DiscountPolicy {
 
     private int discountPercent = 10;
