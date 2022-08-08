@@ -1,16 +1,20 @@
 package woozxn.springcore.order;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import woozxn.springcore.discount.DiscountPolicy;
 import woozxn.springcore.discount.FixDiscountPolicy;
 import woozxn.springcore.member.Member;
 import woozxn.springcore.member.MemberRepository;
 import woozxn.springcore.member.MemoryMemberRepository;
 
+@Component
 public class OrderServiceImpl implements OrderService {
 
     private final MemberRepository memberRepository;
     private final DiscountPolicy discountPolicy;
 
+    @Autowired
     public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
         this.memberRepository = memberRepository;
         this.discountPolicy = discountPolicy;
